@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "An extension that recognizes audio from a tab",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabCapture",
+    "tabs"
   ],
  
   "content_scripts": [{
