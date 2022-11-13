@@ -1,8 +1,8 @@
-(() => {
-    let test;
-    chrome.runtime.onMessage.addListener((obj, sender, response) => {
-        const { type, value, videoId } = obj;
-        console.log(videoId);
-        console.log(test);
-    });
-})();
+
+const messagesFromReact = (message,sender,response) => {
+    response('Hello from content.js');
+
+
+}
+
+chrome.runtime.onMessage.addListener(messagesFromReact);
