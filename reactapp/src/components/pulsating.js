@@ -76,7 +76,7 @@ Pulsating.propTypes = {
 
 Pulsating.defaultProps = {
     children: null,
-    color: "#FFE896",
+    color: "#FFAC1C",
     height: 32,
     visible: false,
     width: 132,

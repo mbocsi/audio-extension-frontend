@@ -92,7 +92,8 @@ function App() {
                 {" "}
                 Transition{" "}
               </button> */}
-            <div>S.P.E.D.</div>
+            <div style={{ fontSize: 24 }}>Sound Pattern</div>
+            <div style={{ fontSize: 24 }}>Engineering & Detection</div>
             {showStage(stage)}
         </div>
     );
