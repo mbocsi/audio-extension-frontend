@@ -1,14 +1,9 @@
 import { Text, Heading, Button } from "@chakra-ui/react";
 import { useState } from "react";
-import akshaygigacringe from "./akshaygigacringe.mp3";
 import "./main.css";
+
 function AudioStreams() {
-    const [stream, setStream] = useState([
-        { test: "Stream 1", file: akshaygigacringe },
-        { test: "Stream 2", file: akshaygigacringe },
-        { test: "Stream 3", file: akshaygigacringe },
-        { test: "Stream 4", file: akshaygigacringe },
-    ]);
+    const [stream, setStream] = useState([{ test: "Stream 1", file: "" }]);
     const [page, setPage] = useState(1);
 
     return (
