@@ -36,9 +36,9 @@ const Pulse = styled.div`
   background: white;
   border-radius: 32px;
   border: 1px solid ${({ color }) => color};
-  height: ${({ layer = 0, height }) => height + layer * 4}px;
+  height: ${({ layer = 0, height }) => height + layer * 4}vh;
   position: absolute;
-  width: ${({ layer = 0, width }) => width + layer * 4}px;
+  width: ${({ layer = 0, width }) => width + layer * 4}%;
   z-index: ${({ layer = 0 }) => MAX_LAYERS - layer};
 `;
 
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 150px;
+  margin: 100px;
   position: relative;
 `;
 
