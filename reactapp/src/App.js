@@ -5,6 +5,7 @@ import Beginning from './components/Beginning';
 function App() {
   return (
     <div className="App">
+      <Main></Main>
       <Loading></Loading>
       <Beginning></Beginning>
     </div>
