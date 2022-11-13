@@ -24,7 +24,7 @@
         "32": "headphone-symbol32.png",
         "128": "headphone-symbol128.png"
       },
-      "default_title": "Audio title",
+      "default_title": "S.P.E.D.",
       "default_popup": "index.html"
   },
   "manifest_version": 3
