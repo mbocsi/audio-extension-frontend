@@ -77,8 +77,12 @@ function App() {
                 style={{ zIndex: 10 }}
             >
                 {" "}
-                Here I am{" "}
+                click me{" "}
             </button>
+            <div>
+              Sound Hub
+              
+            </div>
             {showStage(stage)}
         </div>
     );

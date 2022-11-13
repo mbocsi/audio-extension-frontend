@@ -1,9 +1,10 @@
 import { Text, Heading, Button } from "@chakra-ui/react";
 import { useState } from "react";
+import akshaygigacringe from "./akshaygigacringe.mp3";
 import "./main.css";
 function AudioStreams() {
     const [stream, setStream] = useState([
-        { test: "test1" },
+        { test: "Akshaygigacringe" },
         { test: "test2" },
         { test: "test3" },
         { test: "test4" },
@@ -46,7 +47,7 @@ function AudioStreams() {
                             fontSize={12}
                             style={{ margin: "0 auto", display: "block" }}
                         >
-                            <source src="horse.mp3" type="audio/mpeg" />
+                            <source src={akshaygigacringe} />
                             Your browser does not support the audio element.
                         </audio>
                     </div>
