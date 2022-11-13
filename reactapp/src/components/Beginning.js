@@ -1,15 +1,15 @@
 import React from "react";
-import './styles.css';
-import {Button} from '@chakra-ui/react'
+import "./styles.css";
+import { Button } from "@chakra-ui/react";
 
-function Beginning(){
+function Beginning() {
     return (
         <div>
-          <Button borderRadius={'50%'}>
-            Analyze
-          </Button>
+            <Button width="30%" height="20vh" borderRadius={"45vh"}>
+                Analyze
+            </Button>
         </div>
-    )
+    );
 }
 
 export default Beginning;
