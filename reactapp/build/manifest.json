@@ -14,17 +14,15 @@
   }],
   
   "icons": {
-      "16": "test_images/icon-16.png",
-      "48": "test_images/icon-48.png",
-      "32": "test_images/icon-32.png",
-      "128": "test_images/icon-128.png"
+      "16": "headphone-symbol16.png",
+      "32": "headphone-symbol32.png",
+      "128": "headphone-symbol128.png"
   },
   "action": {
       "default_icon": {
-          "16": "icon-16.png",
-          "48": "icon-48.png",
-          "32": "icon-32.png",
-          "128": "icon-128.png"
+        "16": "headphone-symbol16.png",
+        "32": "headphone-symbol32.png",
+        "128": "headphone-symbol128.png"
       },
       "default_title": "S.P.E.D.",
       "default_popup": "index.html"
