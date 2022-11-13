@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import Loading from "./components/Loading";
 import Beginning from "./components/Beginning";
 import Main from "./components/Main";
+import Fading from "./components/Fading"
 
 function App() {
     const Stages = {
@@ -27,7 +28,11 @@ function App() {
                     }}
                 />
             );
-        } else if (stage == Stages.Done) {
+        }
+        else if (stage == Stages.Fading){
+          return <Fading visible={true} width={35} height={20}></Fading>;
+        }
+        else if (stage == Stages.Done) {
             return <Main />;
         }
 
@@ -37,8 +42,12 @@ function App() {
         if (stage == Stages.Beginning) {
             return Stages.Loading;
         } else if (stage == Stages.Loading) {
-            return Stages.Done;
-        } else {
+            return Stages.Fading;
+        } 
+        else if (stage == Stages.Fading){
+          return Stages.Done;
+        }
+        else {
             return Stages.Beginning;
         }
     };
