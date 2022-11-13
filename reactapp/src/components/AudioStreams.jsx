@@ -4,10 +4,10 @@ import akshaygigacringe from "./akshaygigacringe.mp3";
 import "./main.css";
 function AudioStreams() {
     const [stream, setStream] = useState([
-        { test: "Akshaygigacringe", file: akshaygigacringe },
-        { test: "test2", file: "" },
-        { test: "test3", file: "" },
-        { test: "test4", file: akshaygigacringe },
+        { test: "Stream 1", file: akshaygigacringe },
+        { test: "Stream 2", file: akshaygigacringe },
+        { test: "Stream 3", file: akshaygigacringe },
+        { test: "Stream 4", file: akshaygigacringe },
     ]);
     const [page, setPage] = useState(1);
 
