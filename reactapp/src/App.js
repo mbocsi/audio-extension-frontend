@@ -68,7 +68,7 @@ function App() {
                 port.onMessage.addListener((msg) => {
                     setStage(Stages.Loading);
                     //setSocket(io("http://localhost/"));
-                    console.log(localStorage.getItem("sessionID"));
+                    console.log(msg);
                     socket.send(msg);
                 });
             }
