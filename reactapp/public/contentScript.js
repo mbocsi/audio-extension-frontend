@@ -17,12 +17,13 @@ chrome.runtime.onConnect.addListener((port) => {
                     },
                 })
                 .then((stream) => {
-                    const recorder = new MediaRecorder(stream, {
-                        mimeType: "audio/webm;codecs=pcm",
-                    });
+                    const recorder = new MediaRecorder(stream);
+                    let chunks = [];
                     recorder.ondataavailable = (event) => {
-                        const blob = event.data;
-                        console.log({ data: stream });
+                        chunks.push(event.data);
+                        let blob = new Blob(chunks, {
+                            type: "audio/webm; codecs=opus",
+                        });
                         if (!disconnected) {
                             var reader = new FileReader();
                             reader.readAsDataURL(blob);
