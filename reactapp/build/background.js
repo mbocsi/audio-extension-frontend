@@ -10,3 +10,16 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             .catch(err => console.log(err));
     }
 });
+
+chrome.browserAction.onClicked.addListener((tab) => {
+    if (/^http/.test(tab.url)) {
+        chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            files: ["contentScript.js"]
+        })
+            .then(() => {
+                console.log("INJECTED THE FOREGROUND SCRIPT.");
+            })
+            .catch(err => console.log(err));
+    }
+});
