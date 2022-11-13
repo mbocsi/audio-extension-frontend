@@ -15,12 +15,12 @@ function AudioStreams() {
         <div>
             <Heading>Audio Streams</Heading>
             <Text margin="5%" fontSize={12}>
-                This is some sample information
+                A list of single source audio streams found
             </Text>
             <Button
                 margin="1%"
                 onClick={() => {
-                    if (page != 1) setPage(page - 1);
+                    if (page !== 1) setPage(page - 1);
                 }}
             >
                 {" "}
@@ -41,7 +41,7 @@ function AudioStreams() {
                 return (
                     <div>
                         {" "}
-                        <Text>{stream.test}</Text>
+                        <Text marginTop="5%">{stream.test}</Text>
                         <audio
                             controls
                             fontSize={12}
@@ -53,31 +53,6 @@ function AudioStreams() {
                     </div>
                 );
             })}
-            {/*() => {
-                for (
-                    let i = (page - 1) * 3;
-                    (i < page * 3) | (i < page.length);
-                    i++
-                ) {
-                    return (
-                        <div>
-                            {" "}
-                            <Text>{page[i].test}</Text>
-                            <audio
-                                controls
-                                fontSize={24}
-                                style={{
-                                    margin: "0 auto",
-                                    display: "block",
-                                }}
-                            >
-                                <source src="horse.mp3" type="audio/mpeg" />
-                                Your browser does not support the audio element.
-                            </audio>
-                        </div>
-                    );
-                }
-            } */}
         </div>
     );
 }

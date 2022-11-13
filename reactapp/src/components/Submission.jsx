@@ -1,5 +1,4 @@
 import {
-    Text,
     Heading,
     Accordion,
     AccordionItem,

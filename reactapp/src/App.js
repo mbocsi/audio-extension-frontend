@@ -1,6 +1,5 @@
 /*global chrome*/
 
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
@@ -8,7 +7,6 @@ import io from "socket.io-client";
 import Loading from "./components/Loading";
 import Beginning from "./components/Beginning";
 import Main from "./components/Main";
-import Fading from "./components/Fading";
 
 function App() {
     var socket = null;
@@ -28,7 +26,14 @@ function App() {
     const [stage, setStage] = useState(Stages.Beginning);
     const showStage = (stage) => {
         if (stage === Stages.Beginning) {
-            return <Beginning sendMessage={sendTestMessage} />;
+            return (
+                <Beginning
+                    sendMessage={() => {
+                        switchState(stage);
+                        sendTestMessage();
+                    }}
+                />
+            );
         } else if (stage === Stages.Fading) {
             return <Loading fading={true} />;
         } else if (stage === Stages.Done) {
@@ -84,12 +89,9 @@ function App() {
                 style={{ zIndex: 10 }}
             >
                 {" "}
-                click me{" "}
+                Transition{" "}
             </button>
-            <div>
-              Sound Hub
-              
-            </div>
+            <div>S.P.E.D.</div>
             {showStage(stage)}
         </div>
     );
