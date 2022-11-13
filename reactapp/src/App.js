@@ -33,13 +33,14 @@ function App() {
     };
     const switchState = (stage) => {
         if (stage === Stages.Beginning) {
-            return Stages.Loading;
+            setStage(Stages.Loading);
         } else if (stage === Stages.Loading) {
-            return Stages.Fading;
+            setStage(Stages.Fading);
+            setTimeout(() => setStage(Stages.Done), 1200);
         } else if (stage === Stages.Fading) {
-            return Stages.Done;
+            setStage(Stages.Done);
         } else {
-            return Stages.Beginning;
+            setStage(Stages.Beginning);
         }
     };
     function sendTestMessage() {
@@ -71,8 +72,7 @@ function App() {
         <div className="App">
             <button
                 onClick={() => {
-                    console.log(switchState(stage));
-                    setStage(switchState(stage));
+                    switchState(stage);
                 }}
                 style={{ zIndex: 10 }}
             >
