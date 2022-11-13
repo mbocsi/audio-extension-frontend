@@ -16,7 +16,7 @@ import {
 function Submission() {
     return (
         <div>
-            <Accordion defaultIndex={[0]} width="100%" allowMultiple>
+            <Accordion bgColor="white" width="100%" allowMultiple>
                 <AccordionItem>
                     <AccordionButton>
                         <Box flex="1" textAlign="center">

@@ -2,10 +2,17 @@ import React from "react";
 import "./styles.css";
 import { Button } from "@chakra-ui/react";
 
-function Beginning(props) {
+function Beginning({ changeState }) {
     return (
-        <div>
-            <Button width="30%" height="20vh" borderRadius={"45vh"}>
+        <div className="Beginning">
+            <Button
+                marginTop="5%"
+                width="35vh"
+                height="20vh"
+                borderRadius={"45vh"}
+                bgColor="#FFBF00"
+                onClick={changeState}
+            >
                 Analyze
             </Button>
         </div>

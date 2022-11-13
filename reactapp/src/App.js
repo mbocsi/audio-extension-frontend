@@ -9,24 +9,37 @@ import Beginning from "./components/Beginning";
 import Main from "./components/Main";
 
 function App() {
+    const Stages = {
+        Beginning: "Beginning",
+        Loading: "Loading",
+        Fading: "Fading",
+        Done: "Done",
+    };
     const [response, setResponse] = useState("");
-    const [stage, setStage] = useState("");
+    const [stage, setStage] = useState(Stages.Beginning);
     const showStage = (stage) => {
-        if (stage == "beginning") {
-            return <Beginning sendMessage={sendTestMessage} />;
-        } else if (stage == "main") {
+        if (stage == Stages.Beginning) {
+            return (
+                <Beginning
+                    changeState={() => {
+                        setStage(switchState(stage));
+                        console.log(stage);
+                    }}
+                />
+            );
+        } else if (stage == Stages.Done) {
             return <Main />;
         }
 
         return <Loading />;
     };
     const switchState = (stage) => {
-        if (stage == "beginning") {
-            return "loading";
-        } else if (stage == "loading") {
-            return "main";
+        if (stage == Stages.Beginning) {
+            return Stages.Loading;
+        } else if (stage == Stages.Loading) {
+            return Stages.Done;
         } else {
-            return "beginning";
+            return Stages.Beginning;
         }
     };
     function sendTestMessage() {
