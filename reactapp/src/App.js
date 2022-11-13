@@ -3,8 +3,13 @@
 
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 
+=======
+import Loading from './components/Loading';
+import Beginning from './components/Beginning';
+>>>>>>> 80a2cb2a2235da23fd56a3cc7e992ffa59586e5f
 function App() {
   const [response,setResponse] = useState("");
 
@@ -23,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< HEAD
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -34,6 +40,11 @@ function App() {
           {response}
 
       </header>
+=======
+      <Main></Main>
+      <Loading></Loading>
+      <Beginning></Beginning>
+>>>>>>> 80a2cb2a2235da23fd56a3cc7e992ffa59586e5f
     </div>
   );
 }

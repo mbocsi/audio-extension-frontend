@@ -1,0 +1,14 @@
+.main {
+    align-items: center;
+    text-align: center;
+
+}
+
+.mainPage {
+    background-color: beige;
+    font-family: "Helvetica";
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+
+}

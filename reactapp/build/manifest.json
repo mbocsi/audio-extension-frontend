@@ -2,10 +2,16 @@
   "name": "Audio extension",
   "version": "0.1.0",
   "description": "An extension that recognizes audio from a tab",
+<<<<<<< HEAD
   "permissions": [
     "activeTab"
   ],
  
+=======
+  "background": {
+      "service_worker": "background.js"
+  },
+>>>>>>> 80a2cb2a2235da23fd56a3cc7e992ffa59586e5f
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*"],
       "js": ["contentScript.js"]
