@@ -23,11 +23,8 @@ const Scale = keyframes`
   0% {
     transform: scale(1);
   }
-  35%, 80% {
-    transform: scale(1.1,1.35);
-  }
   100% {
-    transform: scale(1);
+    transform: scale(8.8,10.5);
   }
 `;
 
@@ -54,7 +51,7 @@ const Container = styled.div`
     z-index: ${MAX_LAYERS + 1};
 `;
 
-const Pulsating = ({ children, visible, ...other }) => {
+const Fading = ({ children, visible, ...other }) => {
     return (
         <Wrapper>
             <Container>{children}</Container>
@@ -66,7 +63,7 @@ const Pulsating = ({ children, visible, ...other }) => {
     );
 };
 
-Pulsating.propTypes = {
+Fading.propTypes = {
     children: PropTypes.element,
     color: PropTypes.string,
     height: PropTypes.number,
@@ -74,7 +71,7 @@ Pulsating.propTypes = {
     width: PropTypes.number,
 };
 
-Pulsating.defaultProps = {
+Fading.defaultProps = {
     children: null,
     color: "#FFE896",
     height: 32,
@@ -82,4 +79,4 @@ Pulsating.defaultProps = {
     width: 132,
 };
 
-export default Pulsating;
+export default Fading;

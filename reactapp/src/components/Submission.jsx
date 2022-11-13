@@ -16,20 +16,20 @@ import {
 function Submission() {
     return (
         <div>
-            <Accordion defaultIndex={[0]} width="100%" allowMultiple>
+            <Accordion bgColor="white" width="100%" allowMultiple>
                 <AccordionItem>
                     <AccordionButton>
                         <Box flex="1" textAlign="center">
-                            <Heading>Submission</Heading>
+                            <Heading fontSize={24}>Submission</Heading>
                         </Box>
                         <AccordionIcon />
                     </AccordionButton>
 
                     <AccordionPanel pb={4}>
                         <FormControl>
-                            <FormLabel>URL:</FormLabel>
-                            <Input type="url" />
-                            <FormLabel>Audio File:</FormLabel>
+                            <FormLabel fontSize={14}>URL:</FormLabel>
+                            <Input fontSize={14} type="url" />
+                            <FormLabel fontSize={14}>Audio File:</FormLabel>
                             <input
                                 type="file"
                                 id="avatar"

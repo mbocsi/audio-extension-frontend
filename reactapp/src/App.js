@@ -8,10 +8,53 @@ import io from 'socket.io-client';
 import Loading from "./components/Loading";
 import Beginning from "./components/Beginning";
 import Main from "./components/Main";
+import Fading from "./components/Fading"
+
 function App() {
   
     var socket = io("https://cheesehacks-backend.herokuapp.com/");
-    function openConnection() {
+    const Stages = {
+        Beginning: "Beginning",
+        Loading: "Loading",
+        Fading: "Fading",
+        Done: "Done",
+    };
+    const [response, setResponse] = useState("");
+    const [stage, setStage] = useState(Stages.Beginning);
+    const showStage = (stage) => {
+        if (stage == Stages.Beginning) {
+            return (
+                <Beginning
+                    changeState={() => {
+                        setStage(switchState(stage));
+                        console.log(stage);
+                    }}
+                />
+            );
+        }
+        else if (stage == Stages.Fading){
+          return <Fading visible={true} width={35} height={20}></Fading>;
+        }
+        else if (stage == Stages.Done) {
+            return <Main />;
+        }
+
+        return <Loading />;
+    };
+    const switchState = (stage) => {
+        if (stage == Stages.Beginning) {
+            return Stages.Loading;
+        } else if (stage == Stages.Loading) {
+            return Stages.Fading;
+        } 
+        else if (stage == Stages.Fading){
+          return Stages.Done;
+        }
+        else {
+            return Stages.Beginning;
+        }
+    };
+    function sendTestMessage() {
         chrome.tabs.query(
             { active: true, currentWindow : true },
             function (tabs) {
@@ -33,12 +76,17 @@ function App() {
 
     return (
         <div className="App">
-
-                      <button onClick={openConnection}>HELLO</button>
-{/* 
-            <Main></Main>
-            <Loading></Loading>
-            <Beginning></Beginning> */}
+            <button
+                onClick={() => {
+                    console.log(switchState(stage));
+                    setStage(switchState(stage));
+                }}
+                style={{ zIndex: 10 }}
+            >
+                {" "}
+                Here I am{" "}
+            </button>
+            {showStage(stage)}
         </div>
     );
 }
