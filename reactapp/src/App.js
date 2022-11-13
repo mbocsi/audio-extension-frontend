@@ -11,7 +11,13 @@ import Main from "./components/Main";
 import Fading from "./components/Fading";
 
 function App() {
-    var socket = io("https://cheesehacks-backend.herokuapp.com/");
+    var socket = null;
+    useEffect(() => {
+        socket = io("https://cheesehacks-backend.herokuapp.com/");
+        socket.on("session", ({ sessionID }) => {
+            localStorage.setItem("sessionID", sessionID);
+        });
+    }, []);
     const Stages = {
         Beginning: "Beginning",
         Loading: "Loading",
@@ -58,10 +64,11 @@ function App() {
                         });
                     }
                 );
+                port.onMessage.removeListener();
                 port.onMessage.addListener((msg) => {
                     setStage(Stages.Loading);
                     //setSocket(io("http://localhost/"));
-                    console.log(msg);
+                    console.log(localStorage.getItem("sessionID"));
                     socket.send(msg);
                 });
             }

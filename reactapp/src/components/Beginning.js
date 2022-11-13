@@ -10,8 +10,10 @@ function Beginning({ sendMessage }) {
                 width="35vh"
                 height="20vh"
                 borderRadius={"45vh"}
-                bgColor="#FFBF00"
+                bgColor="#FFE896"
                 onClick={sendMessage}
+                borderColor="#FFE896"
+                borderWidth="2px"
             >
                 Analyze
             </Button>
