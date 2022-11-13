@@ -12,9 +12,11 @@ function Beginning({ sendMessage }) {
                 borderRadius={"45vh"}
                 bgColor="#FFE896"
                 onClick={sendMessage}
-                fontFamily={'Arial'}
-                fontStyle={'italic'}
+                fontFamily={"Arial"}
+                fontStyle={"italic"}
                 fontSize="55%"
+                borderColor="#FFE896"
+                borderWidth="2px"
             >
                 Analyze Sound
             </Button>
