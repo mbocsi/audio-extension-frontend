@@ -28,7 +28,7 @@ function AudioStreams() {
             <Button
                 margin="1%"
                 onClick={() => {
-                    if (page * 3 < stream.length) {
+                    if (page * 2 < stream.length) {
                         setPage(page + 1);
                     }
                 }}
@@ -36,7 +36,7 @@ function AudioStreams() {
                 {" "}
                 Next{" "}
             </Button>
-            {stream.slice((page - 1) * 3, page * 3).map((stream) => {
+            {stream.slice((page - 1) * 2, page * 2).map((stream) => {
                 return (
                     <div>
                         {" "}
