@@ -32,54 +32,54 @@ const Scale = keyframes`
 `;
 
 const Pulse = styled.div`
-  animation: ${({ layer }) => (layer ? pulse : Scale)} 1.5s infinite;
-  background: white;
-  border-radius: 32px;
-  border: 1px solid ${({ color }) => color};
-  height: ${({ layer = 0, height }) => height + layer * 4}vh;
-  position: absolute;
-  width: ${({ layer = 0, width }) => width + layer * 4}%;
-  z-index: ${({ layer = 0 }) => MAX_LAYERS - layer};
+    animation: ${({ layer }) => (layer ? pulse : Scale)} 1.5s infinite;
+    background: white;
+    border-radius: 50vh;
+    border: 1px solid ${({ color }) => color};
+    height: ${({ layer = 0, height }) => height + layer * 4}vh;
+    position: absolute;
+    width: ${({ layer = 0, width }) => width + layer * 4}vh;
+    z-index: ${({ layer = 0 }) => MAX_LAYERS - layer};
 `;
 
 const Wrapper = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: 100px;
-  position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 100px;
+    position: relative;
 `;
 
 const Container = styled.div`
-  z-index: ${MAX_LAYERS + 1};
+    z-index: ${MAX_LAYERS + 1};
 `;
 
 const Pulsating = ({ children, visible, ...other }) => {
-  return (
-    <Wrapper>
-      <Container>{children}</Container>
-      {visible &&
-        Array.from(Array(MAX_LAYERS).keys()).map((key) => (
-          <Pulse key={key} layer={key} {...other} />
-        ))}
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <Container>{children}</Container>
+            {visible &&
+                Array.from(Array(MAX_LAYERS).keys()).map((key) => (
+                    <Pulse key={key} layer={key} {...other} />
+                ))}
+        </Wrapper>
+    );
 };
 
 Pulsating.propTypes = {
-  children: PropTypes.element,
-  color: PropTypes.string,
-  height: PropTypes.number,
-  visible: PropTypes.bool,
-  width: PropTypes.number
+    children: PropTypes.element,
+    color: PropTypes.string,
+    height: PropTypes.number,
+    visible: PropTypes.bool,
+    width: PropTypes.number,
 };
 
 Pulsating.defaultProps = {
-  children: null,
-  color: "#FFE896",
-  height: 32,
-  visible: false,
-  width: 132
+    children: null,
+    color: "#FFE896",
+    height: 32,
+    visible: false,
+    width: 132,
 };
 
 export default Pulsating;
