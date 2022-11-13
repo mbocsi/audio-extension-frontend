@@ -26,7 +26,7 @@
           "32": "icon-32.png",
           "128": "icon-128.png"
       },
-      "default_title": "Audio title",
+      "default_title": "S.P.E.D.",
       "default_popup": "index.html"
   },
   "manifest_version": 3

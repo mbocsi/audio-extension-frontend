@@ -82,6 +82,7 @@ function App() {
 
     return (
         <div className="App">
+            {/*
             <button
                 onClick={() => {
                     switchState(stage);
@@ -90,7 +91,7 @@ function App() {
             >
                 {" "}
                 Transition{" "}
-            </button>
+              </button> */}
             <div>S.P.E.D.</div>
             {showStage(stage)}
         </div>

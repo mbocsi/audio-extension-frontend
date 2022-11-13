@@ -4,10 +4,10 @@ import akshaygigacringe from "./akshaygigacringe.mp3";
 import "./main.css";
 function AudioStreams() {
     const [stream, setStream] = useState([
-        { test: "Akshaygigacringe" },
-        { test: "test2" },
-        { test: "test3" },
-        { test: "test4" },
+        { test: "Akshaygigacringe", file: akshaygigacringe },
+        { test: "test2", file: "" },
+        { test: "test3", file: "" },
+        { test: "test4", file: akshaygigacringe },
     ]);
     const [page, setPage] = useState(1);
 
@@ -47,7 +47,7 @@ function AudioStreams() {
                             fontSize={12}
                             style={{ margin: "0 auto", display: "block" }}
                         >
-                            <source src={akshaygigacringe} />
+                            <source src={stream.file} />
                             Your browser does not support the audio element.
                         </audio>
                     </div>
