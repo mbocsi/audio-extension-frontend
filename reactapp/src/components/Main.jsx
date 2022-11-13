@@ -5,7 +5,7 @@ import "./main.css";
 function Main() {
     return (
         <div className="mainPage">
-            <Stack className="main" spacing="5%">
+            <Stack className="main" spacing="1%">
                 <AudioStreams />
                 <Submission />
             </Stack>

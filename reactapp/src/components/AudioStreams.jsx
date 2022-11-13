@@ -9,22 +9,41 @@ function AudioStreams() {
         { test: "test4" },
     ]);
     const [page, setPage] = useState(1);
+
     return (
         <div>
             <Heading>Audio Streams</Heading>
-            <Text margin="5%" fontSize={24}>
+            <Text margin="5%" fontSize={12}>
                 This is some sample information
             </Text>
-            <Button> Prev </Button>
-            <Button> Next </Button>
-            {stream.map((stream) => {
+            <Button
+                margin="1%"
+                onClick={() => {
+                    if (page != 1) setPage(page - 1);
+                }}
+            >
+                {" "}
+                Prev{" "}
+            </Button>
+            <Button
+                margin="1%"
+                onClick={() => {
+                    if (page * 3 < stream.length) {
+                        setPage(page + 1);
+                    }
+                }}
+            >
+                {" "}
+                Next{" "}
+            </Button>
+            {stream.slice((page - 1) * 3, page * 3).map((stream) => {
                 return (
                     <div>
                         {" "}
                         <Text>{stream.test}</Text>
                         <audio
                             controls
-                            fontSize={24}
+                            fontSize={12}
                             style={{ margin: "0 auto", display: "block" }}
                         >
                             <source src="horse.mp3" type="audio/mpeg" />
@@ -35,8 +54,8 @@ function AudioStreams() {
             })}
             {/*() => {
                 for (
-                    let i = (page - 1) * 4;
-                    (i < page * 4) | (i < page.length);
+                    let i = (page - 1) * 3;
+                    (i < page * 3) | (i < page.length);
                     i++
                 ) {
                     return (
@@ -46,7 +65,10 @@ function AudioStreams() {
                             <audio
                                 controls
                                 fontSize={24}
-                                style={{ margin: "0 auto", display: "block" }}
+                                style={{
+                                    margin: "0 auto",
+                                    display: "block",
+                                }}
                             >
                                 <source src="horse.mp3" type="audio/mpeg" />
                                 Your browser does not support the audio element.
@@ -54,7 +76,7 @@ function AudioStreams() {
                         </div>
                     );
                 }
-            }*/}
+            } */}
         </div>
     );
 }
