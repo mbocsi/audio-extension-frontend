@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import Loading from "./components/Loading";
 import Beginning from "./components/Beginning";
 import Main from "./components/Main";
-import Fading from "./components/Fading"
+import Fading from "./components/Fading";
 
 function App() {
     const Stages = {
@@ -19,7 +19,7 @@ function App() {
     const [response, setResponse] = useState("");
     const [stage, setStage] = useState(Stages.Beginning);
     const showStage = (stage) => {
-        if (stage == Stages.Beginning) {
+        if (stage === Stages.Beginning) {
             return (
                 <Beginning
                     changeState={() => {
@@ -28,26 +28,22 @@ function App() {
                     }}
                 />
             );
-        }
-        else if (stage == Stages.Fading){
-          return <Fading visible={true} width={35} height={20}></Fading>;
-        }
-        else if (stage == Stages.Done) {
+        } else if (stage === Stages.Fading) {
+            return <Loading fading={true} />;
+        } else if (stage === Stages.Done) {
             return <Main />;
         }
 
-        return <Loading />;
+        return <Loading fading={false} />;
     };
     const switchState = (stage) => {
-        if (stage == Stages.Beginning) {
+        if (stage === Stages.Beginning) {
             return Stages.Loading;
-        } else if (stage == Stages.Loading) {
+        } else if (stage === Stages.Loading) {
             return Stages.Fading;
-        } 
-        else if (stage == Stages.Fading){
-          return Stages.Done;
-        }
-        else {
+        } else if (stage === Stages.Fading) {
+            return Stages.Done;
+        } else {
             return Stages.Beginning;
         }
     };
