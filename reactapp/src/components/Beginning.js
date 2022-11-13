@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import { Button } from "@chakra-ui/react";
 
-function Beginning({ changeState }) {
+function Beginning({ sendMessage }) {
     return (
         <div className="Beginning">
             <Button
@@ -11,7 +11,7 @@ function Beginning({ changeState }) {
                 height="20vh"
                 borderRadius={"45vh"}
                 bgColor="#FFBF00"
-                onClick={changeState}
+                onClick={sendMessage}
             >
                 Analyze
             </Button>
